@@ -1,6 +1,5 @@
 package Persistence;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoIterable;
+import com.mongodb.client.*;
 
 public class Main {
     public static void main(String[] args) {

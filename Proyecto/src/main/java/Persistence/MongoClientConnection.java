@@ -1,7 +1,10 @@
 package Persistence;
+import com.mongodb.client.*;
 import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
+
+
+
 
 public class MongoClientConnection {
     private static MongoClient mongoClient = null;

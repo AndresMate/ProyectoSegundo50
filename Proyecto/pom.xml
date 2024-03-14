@@ -36,27 +36,18 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
             <version>5.0.0</version>
         </dependency>
-        <!-- Dependencia para SLF4J -->
+        <!-- https://mvnrepository.com/artifact/com.mongodb/mongo -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.30</version>
+            <groupId>com.mongodb</groupId>
+            <artifactId>mongo</artifactId>
+            <version>1.0</version>
         </dependency>
-        <!-- Implementación de SLF4J con Logback -->
-        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.5.3</version>
-            <scope>test</scope>
-        </dependency>
-
-
     </dependencies>
 
     <build>

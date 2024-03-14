@@ -10,12 +10,8 @@ public class MongoClientConnection {
         if (mongoClient == null) {
             // usar una forma segura de manejar la cadena de conexión.
             String connectionString = "mongodb+srv://ADMIN:Andres&Dumar@cluster0.5apyxiy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-            try {
-                mongoClient = MongoClients.create(connectionString);
-            } catch (Exception e) {
-                // Manejo de excepciones adecuado
-                e.printStackTrace();
-            }
+                  mongoClient = MongoClients.create(connectionString);
+
         }
         return mongoClient;
     }

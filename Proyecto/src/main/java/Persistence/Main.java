@@ -1,5 +1,4 @@
 package Persistence;
-import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
 
@@ -7,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         // Reemplaza "tuBaseDeDatos" con el nombre de tu base de datos
         String dbName = "ClubDeportivo";
-        
+
 
         // Obteniendo la base de datos
         MongoDatabase database = MongoClientConnection.getDatabase(dbName);

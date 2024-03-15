@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con panel izquierdo y central actualizable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="panel-izquierdo">
+        <img src="/src/logo.PNG" alt="imagen logo" style="max-width: 200px; height: auto;">
+        <h2>Opciones</h2>
+        <div class="opcion" data-url="contenido1.html">Ver Afiliados</div>
+        <div class="opcion" data-url="contenido2.html">Disciplinas</div>
+
+    </div>
+    <div class="panel-central" id="panelCentral">
+        <h2>Contenido</h2>
+        <br><br>
+        <label for="filtrarPor">Filtrar por:</label>
+        <select id="filtrarPor">
+            <option value="cedula">Filtrar por cédula</option>
+            <option value="nombre">Filtrar por nombre</option>
+            <option value="disciplina">Filtrar por disciplina</option>
+        </select>
+        <br><br>
+        <button id="buscarBtn">Buscar</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

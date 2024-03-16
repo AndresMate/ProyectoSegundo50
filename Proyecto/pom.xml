@@ -48,6 +48,21 @@
             <artifactId>mongo</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- añadí esto por para probar *********************************************************-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+        <!-- Spring Boot Starter Data MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+
+        <!-- añadí esto por para probar *********************************************************-->
+
     </dependencies>
 
     <build>

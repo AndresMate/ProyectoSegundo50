@@ -26,7 +26,11 @@ public class Main {
 
                 // Itera sobre cada documento e imprime sus datos
                 for (Document document : documents) {
-                    System.out.println(document.toJson());
+                    // Itera sobre cada campo del documento
+                    for (String key : document.keySet()) {
+                        System.out.println(key + ": " + document.get(key));
+                    }
+                    System.out.println(); // Agrega un salto de línea entre documentos
                 }
             }
         } catch (Exception e) {

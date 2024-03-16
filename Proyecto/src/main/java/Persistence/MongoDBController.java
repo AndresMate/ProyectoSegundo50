@@ -16,7 +16,7 @@ import java.util.Map;
 @RestController
 public class MongoDBController {
     //***** aqui no se cual es la ruta de la base de datos del servidor****
-    @GetMapping("/datosBaseDeDatos")
+    @GetMapping("mongodb+srv://ADMIN:Andres&Dumar@cluster0.5apyxiy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     public List<Map<String, Object>> getDatabaseData() {
         List<Map<String, Object>> databaseData = new ArrayList<>();
 

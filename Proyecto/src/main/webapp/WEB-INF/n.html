@@ -17,6 +17,7 @@
         <button id="verDeportesButton">Ver deportes</button>
         <button id="verEventosButton">Ver eventos</button>
         <button id="verResultadosButton">Ver resultados</button>
+        <button id="addAfiliadoButton">Añadir Afiliado</button> <!-- Botón para añadir afiliado -->
     </div>
 
     <!-- Contenedor de las tablas -->
@@ -36,6 +37,21 @@
         <table id="tablaResultados">
             <!-- Aquí va el contenido de la tabla de resultados -->
         </table>
+    </div>
+
+    <!-- Formulario para añadir afiliado (inicialmente oculto) -->
+    <div id="addAfiliadoForm" style="display: none;">
+        <label for="idInput">ID:</label>
+        <input type="text" id="idInput" required><br>
+        <label for="identificacionInput">Identificacion:</label>
+        <input type="text" id="identificacionInput" required><br>
+        <label for="nombreInput">Nombre:</label>
+        <input type="text" id="nombreInput" required><br>
+        <label for="edadInput">Edad:</label>
+        <input type="text" id="edadInput" required><br>
+        <label for="deporteInput">Deporte:</label>
+        <input type="text" id="deporteInput" required><br>
+        <button id="guardarAfiliadoButton">Guardar</button>
     </div>
 </div>
 

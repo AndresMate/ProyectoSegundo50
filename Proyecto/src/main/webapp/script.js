@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener para el botón "Guardar"
     document.getElementById("guardarAfiliadoButton").addEventListener("click", agregarAfiliado);
 
+    // Event listener para el botón "Ver Últimos Afiliados"
+    document.getElementById("verUltimosAfiliadosButton").addEventListener('click', verUltimosAfiliados);
+
     // Función para cargar y mostrar todos los datos del archivo JSON
     function cargarDatos() {
         fetch('/src/main/java/Persistence/datos.json')
@@ -146,6 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 mostrarDatosEnTabla(resultados);
             })
             .catch(error => console.error('Error al cargar los datos:', error));
+    }
+
+    // Función para mostrar los últimos afiliados agregados
+    function verUltimosAfiliados() {
+        const ultimosAfiliados = afiliados.slice(-5); // Obtener los últimos 5 afiliados
+        mostrarDatosEnTabla(ultimosAfiliados);
     }
 
     // Cargar los datos de afiliados al cargar la página

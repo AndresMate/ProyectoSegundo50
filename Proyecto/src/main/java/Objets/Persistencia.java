@@ -19,41 +19,21 @@ public class Persistencia {
 
         try (MongoClient mongoClient = MongoClients.create(connectionString)) {
             MongoDatabase database = mongoClient.getDatabase("ClubDeportivo");
-            MongoCollection<Document> collectionAfiliados = database.getCollection("Afiliados");
-            MongoCollection<Document> collectionDeportes = database.getCollection("Deportes");
-            MongoCollection<Document> collectionEventos = database.getCollection("Eventos");
-            MongoCollection<Document> collectionResultados = database.getCollection("Resultados");
+            MongoCollection<Document> collection = database.getCollection("Afiliados");
 
-            for (Document doc : collectionAfiliados.find()) {
+            for (Document doc : collection.find()) {
                 int _id = doc.getInteger("_id");
                 String nombre = doc.getString("nombre");
                 String identificacion = doc.getString("identificacion");
                 int edad = doc.getInteger("edad");
                 int idDeporte = doc.getInteger("idDeporte");
-                List<String> idEventos = (List<String>) doc.get("idEventos");
+                List<Integer> idEventos = doc.getList("idResultados", Integer.class);
 
-                // Obtener el nombre del deporte correspondiente al ID
-                Document docDeporte = collectionDeportes.find(new Document("_id", idDeporte)).first();
-                String nombreDeporte = docDeporte != null ? docDeporte.getString("nombre") : null;
-
-                // Obtener los nombres de los eventos y la posición que obtuvo el afiliado
-                List<String> nombresEventos = new ArrayList<>();
-                if (idEventos != null) {
-                for (String idEvento : idEventos) {
-                    Document docEvento = collectionEventos.find(new Document("_id", idEvento)).first();
-                    String nombreEvento = docEvento != null ? docEvento.getString("nombre") : null;
-
-                    Document docResultado = collectionResultados.find(new Document("idAfiliado", _id).append("idEvento", idEvento)).first();
-                    int posicion = docResultado != null ? docResultado.getInteger("posicion") : -1;
-
-                    nombresEventos.add(nombreEvento + " (Posición: " + posicion + ")");
-                }}
-
-                Afiliados afiliado = new Afiliados(_id, nombre, identificacion, edad, idDeporte, idEventos);
+                Afiliados afiliado = new Afiliados(_id, nombre, identificacion, edad, idDeporte, new ArrayList<>(idEventos));
                 afiliados.add(afiliado);
             }
         } catch (Exception e) {
-            System.err.println("Error al obtener los afiliados de la base de datos MongoDB: " + e.getMessage());
+            e.printStackTrace();
         }
 
         return afiliados;
@@ -68,7 +48,7 @@ public class Persistencia {
         data.put("identificacion", afiliado.getIdentificacion());
         data.put("edad", afiliado.getEdad());
         data.put("idDeporte", afiliado.getIdDeporte());
-        data.put("idEventos", afiliado.getIdEventos());
+        data.put("idEventos", afiliado.getIdResultados());
         guardar("Afiliados", data);
     }
 

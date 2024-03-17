@@ -13,18 +13,18 @@ public class Afiliados {
     private String identificacion;
     private int edad;
     private int idDeporte;
-    private List<String> idEventos;
+    private List<Integer> idResultados;
 
     /**
      * Constructor de la clase Afiliados.
      */
-    public Afiliados(int _id, String nombre, String identificacion, int edad, int idDeporte, List<String> idEventos) {
+    public Afiliados(int _id, String nombre, String identificacion, int edad, int idDeporte, List<Integer> idResultados) {
         this._id = _id;
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.edad = edad;
         this.idDeporte = idDeporte;
-        this.idEventos = idEventos;
+        this.idResultados = idResultados;
     }
 
     // Getters y setters con comentarios explicativos
@@ -69,12 +69,12 @@ public class Afiliados {
         this.idDeporte = idDeporte;
     }
 
-    public ArrayList<String> getIdEventos() {
-        return (ArrayList<String>) idEventos;
+    public ArrayList<Integer> getIdResultados() {
+        return (ArrayList<Integer>) idResultados;
     }
 
-    public void setIdEventos(ArrayList<String> idEventos) {
-        this.idEventos = idEventos;
+    public void setIdResultados(ArrayList<Integer> idResultados) {
+        this.idResultados = idResultados;
     }
 
     // Métodos toString, equals y hashCode
@@ -87,7 +87,7 @@ public class Afiliados {
                 ", identificacion='" + identificacion + '\'' +
                 ", edad=" + edad +
                 ", idDeporte=" + idDeporte +
-                ", idEventos=" + idEventos +
+                ", idEventos=" + idResultados +
                 '}';
     }
 
@@ -101,11 +101,11 @@ public class Afiliados {
                 idDeporte == afiliados.idDeporte &&
                 Objects.equals(nombre, afiliados.nombre) &&
                 Objects.equals(identificacion, afiliados.identificacion) &&
-                Objects.equals(idEventos, afiliados.idEventos);
+                Objects.equals(idResultados, afiliados.idResultados);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(_id, nombre, identificacion, edad, idDeporte, idEventos);
+        return Objects.hash(_id, nombre, identificacion, edad, idDeporte, idResultados);
     }
 }

@@ -1,116 +1,94 @@
 // archivo.js
 
-// Función para cargar y mostrar los datos del archivo JSON
+// Función para cargar y mostrar todos los datos del archivo JSON
 function cargarDatos() {
     fetch('/src/main/java/Persistence/datos.json')
         .then(response => response.json())
-        .then(data => {
-            // Obtener el elemento DIV donde se mostrarán los datos
-            const dataDiv = document.getElementById('data');
-
-            // Crear una lista para mostrar los datos
-            const ul = document.createElement('ul');
-
-            // Iterar sobre los datos y crear elementos de lista
-            data.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = JSON.stringify(item);
-                ul.appendChild(li);
-            });
-
-            // Agregar la lista al elemento DIV
-            dataDiv.appendChild(ul);
-        })
+        .then(data => mostrarDatosEnTabla(data))
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-// Función para filtrar y mostrar solo los datos de la colección "Afiliados"
+// Función para filtrar y mostrar solo los datos de la colección "Afiliados" en tabla
 function verAfiliados() {
     fetch('/src/main/java/Persistence/datos.json')
         .then(response => response.json())
         .then(data => {
-            // Filtrar datos para mostrar solo la colección de afiliados
             const afiliados = data.filter(item => item.hasOwnProperty('nombre') && item.hasOwnProperty('edad'));
-
-            // Mostrar los datos filtrados
-            mostrarDatos(afiliados);
+            mostrarDatosEnTabla(afiliados);
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-// Función para filtrar y mostrar solo los datos de la colección "Deportes"
+// Función para filtrar y mostrar solo los datos de la colección "Deportes" en tabla
 function verDeportes() {
     fetch('/src/main/java/Persistence/datos.json')
         .then(response => response.json())
         .then(data => {
-            // Filtrar datos para mostrar solo la colección de deportes
             const deportes = data.filter(item => item.hasOwnProperty('modalidad') && item.hasOwnProperty('cupos'));
-
-            // Mostrar los datos filtrados
-            mostrarDatos(deportes);
+            mostrarDatosEnTabla(deportes);
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-// Función para filtrar y mostrar solo los datos de la colección "Eventos"
+// Función para filtrar y mostrar solo los datos de la colección "Eventos" en tabla
 function verEventos() {
     fetch('/src/main/java/Persistence/datos.json')
         .then(response => response.json())
         .then(data => {
-            // Filtrar datos para mostrar solo la colección de eventos
             const eventos = data.filter(item => item.hasOwnProperty('fecha') && item.hasOwnProperty('nombre'));
-
-            // Mostrar los datos filtrados
-            mostrarDatos(eventos);
+            mostrarDatosEnTabla(eventos);
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-// Función para filtrar y mostrar solo los datos de la colección "Resultados"
+// Función para filtrar y mostrar solo los datos de la colección "Resultados" en tabla
 function verResultados() {
     fetch('/src/main/java/Persistence/datos.json')
         .then(response => response.json())
         .then(data => {
-            // Filtrar datos para mostrar solo la colección de resultados
             const resultados = data.filter(item => item.hasOwnProperty('idEvento') && item.hasOwnProperty('idGanador') && item.hasOwnProperty('posicion'));
-
-            // Mostrar los datos filtrados
-            mostrarDatos(resultados);
+            mostrarDatosEnTabla(resultados);
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-// Función para mostrar los datos en el elemento DIV
-function mostrarDatos(datos) {
-    // Limpiar el contenido actual del elemento DIV
+// Función para mostrar los datos en una tabla ordenados por el campo "_id"
+function mostrarDatosEnTabla(datos) {
     const dataDiv = document.getElementById('data');
     dataDiv.innerHTML = '';
 
-    // Crear una lista para mostrar los datos
-    const ul = document.createElement('ul');
+    // Ordenar los datos por el campo "_id"
+    datos.sort((a, b) => a._id - b._id);
 
-    // Iterar sobre los datos y crear elementos de lista
-    datos.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = JSON.stringify(item);
-        ul.appendChild(li);
+    const table = document.createElement('table');
+    const headerRow = table.insertRow();
+    Object.keys(datos[0]).forEach(key => {
+        const headerCell = document.createElement('th');
+        headerCell.textContent = key;
+        headerRow.appendChild(headerCell);
     });
 
-    // Agregar la lista al elemento DIV
-    dataDiv.appendChild(ul);
+    datos.forEach(item => {
+        const row = table.insertRow();
+        Object.values(item).forEach(value => {
+            const cell = row.insertCell();
+            cell.textContent = value;
+        });
+    });
+
+    dataDiv.appendChild(table);
 }
 
 // Obtener los botones por su ID
+const verTodosButton = document.getElementById('verTodosButton');
 const verAfiliadosButton = document.getElementById('verAfiliadosButton');
 const verDeportesButton = document.getElementById('verDeportesButton');
 const verEventosButton = document.getElementById('verEventosButton');
 const verResultadosButton = document.getElementById('verResultadosButton');
 
 // Agregar eventos de clic a los botones
+verTodosButton.addEventListener('click', cargarDatos);
 verAfiliadosButton.addEventListener('click', verAfiliados);
 verDeportesButton.addEventListener('click', verDeportes);
 verEventosButton.addEventListener('click', verEventos);
 verResultadosButton.addEventListener('click', verResultados);
-
-// Llamar a la función para cargar todos los datos cuando se cargue la página
-cargarDatos();

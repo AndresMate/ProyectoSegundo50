@@ -1,42 +1,40 @@
 document.addEventListener("DOMContentLoaded", function() {
-    cargarDatos();
-});
-
-function mostrarAfiliados() {
-    fetch('http://localhost:8080/datosBaseDeDatos') // Asegúrate de que esta es la ruta correcta a tu servlet
-        .then(response => response.json())
-        .then(afiliados => {
-            let contenedorAfiliados = document.getElementById('contenedorAfiliados');
-            contenedorAfiliados.innerHTML = ''; // Limpiar el contenedor
-
-            for (let afiliado of afiliados) {
-                let afiliadoElement = document.createElement('p');
-                afiliadoElement.textContent = afiliado.nombre + ', ' + afiliado.identificacion;
-                contenedorAfiliados.appendChild(afiliadoElement);
-            }
-        })
-        .catch(error => console.error('Error:', error));
-}
-
-function cargarDatos() {
-    fetch('http://localhost:8080/datosBaseDeDatos') // Asegúrate de que esta es la ruta correcta a tu servlet
+    // Realizar una solicitud HTTP para obtener los datos de la base de datos
+    fetch('/datos')
         .then(response => response.json())
         .then(data => {
-            let tablaHtml = '<table border="1"><tr><th>ID</th><th>Nombre</th><th>Identificación</th><th>Edad</th><th>Deporte</th><th>Eventos</th></tr>';
-            data.forEach(afiliado => {
-                tablaHtml += `<tr>
-                                <td>${afiliado._id}</td>
-                                <td>${afiliado.nombre}</td>
-                                <td>${afiliado.identificacion}</td>
-                                <td>${afiliado.edad}</td>
-                                <td>${afiliado.nombreDeporte}</td>
-                                <td>${afiliado.nombresEventos.join(', ')}</td>
-                              </tr>`;
+            // Crear una tabla HTML y agregar los datos
+            const tablaDatos = document.getElementById('tablaDatos');
+
+            data.forEach(collectionData => {
+                const encabezado = document.createElement('h2');
+                encabezado.textContent = `Colección: ${collectionData.collection}`;
+                tablaDatos.appendChild(encabezado);
+
+                const tablaColeccion = document.createElement('table');
+                tablaColeccion.border = 1;
+
+                const encabezados = Object.keys(collectionData.documents[0]);
+                const encabezadoRow = document.createElement('tr');
+                encabezados.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    encabezadoRow.appendChild(th);
+                });
+                tablaColeccion.appendChild(encabezadoRow);
+
+                collectionData.documents.forEach(document => {
+                    const row = document.createElement('tr');
+                    encabezados.forEach(header => {
+                        const cell = document.createElement('td');
+                        cell.textContent = document[header];
+                        row.appendChild(cell);
+                    });
+                    tablaColeccion.appendChild(row);
+                });
+
+                tablaDatos.appendChild(tablaColeccion);
             });
-            tablaHtml += '</table>';
-            document.getElementById('datos').innerHTML = tablaHtml;
         })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
+        .catch(error => console.error('Error al obtener los datos:', error));
+});

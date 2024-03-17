@@ -50,3 +50,25 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+/* Estilos para el formulario de añadir afiliado */
+#addAfiliadoForm {
+    display: none; /* Ocultar el formulario por defecto */
+}
+
+#addAfiliadoForm table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#addAfiliadoForm td {
+    padding: 8px;
+}
+
+#addAfiliadoForm input[type="text"] {
+    width: calc(100% - 16px); /* Ancho del input, menos el padding */
+}
+
+#addAfiliadoForm button {
+    width: 100%;
+}

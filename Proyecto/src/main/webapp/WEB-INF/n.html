@@ -42,17 +42,31 @@
 
     <!-- Formulario para añadir afiliado (inicialmente oculto) -->
     <div id="addAfiliadoForm" style="display: none;">
-        <label for="idInput">ID:</label>
-        <input type="text" id="idInput" required><br>
-        <label for="identificacionInput">Identificacion:</label>
-        <input type="text" id="identificacionInput" required><br>
-        <label for="nombreInput">Nombre:</label>
-        <input type="text" id="nombreInput" required><br>
-        <label for="edadInput">Edad:</label>
-        <input type="text" id="edadInput" required><br>
-        <label for="deporteInput">Deporte:</label>
-        <input type="text" id="deporteInput" required><br>
-        <button id="guardarAfiliadoButton">Guardar</button>
+        <table id="formularioAfiliado">
+            <tr>
+                <td><label for="idInput">ID:</label></td>
+                <td><input type="text" id="idInput" required></td>
+            </tr>
+            <tr>
+                <td><label for="identificacionInput">Identificacion:</label></td>
+                <td><input type="text" id="identificacionInput" required></td>
+            </tr>
+            <tr>
+                <td><label for="nombreInput">Nombre:</label></td>
+                <td><input type="text" id="nombreInput" required></td>
+            </tr>
+            <tr>
+                <td><label for="edadInput">Edad:</label></td>
+                <td><input type="text" id="edadInput" required></td>
+            </tr>
+            <tr>
+                <td><label for="deporteInput">Deporte:</label></td>
+                <td><input type="text" id="deporteInput" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="guardarAfiliadoButton">Guardar</button></td>
+            </tr>
+        </table>
     </div>
 </div>
 

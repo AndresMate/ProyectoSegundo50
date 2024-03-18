@@ -171,10 +171,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const id = prompt("Ingrese el ID del afiliado que desea borrar:");
         const index = afiliados.findIndex(afiliado => afiliado.id === id);
         if (index !== -1) {
+            const deletedAfiliado = afiliados[index];
             afiliados.splice(index, 1);
             guardarAfiliados();
             mostrarDatosEnTabla(afiliados);
-            alert("Afiliado borrado exitosamente.");
+            alert(`Afiliado borrado exitosamente:\nID: ${deletedAfiliado.id}\nIdentificación: ${deletedAfiliado.identificacion}\nNombre: ${deletedAfiliado.nombre}\nEdad: ${deletedAfiliado.edad}\nDeporte: ${deletedAfiliado.deporte}`);
         } else {
             alert("No se encontró ningún afiliado con ese ID.");
         }

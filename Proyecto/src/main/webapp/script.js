@@ -44,36 +44,40 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("deporteInput").value = "";
         ocultarFormulario();
 
+        // Ordenar los afiliados por ID antes de mostrarlos en la tabla
+        afiliados.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+
         // Actualizar la tabla de afiliados
         mostrarDatosEnTabla(afiliados);
-
-        // Mostrar los afiliados actualizados después de agregar uno nuevo
-        verAfiliados();
     }
 
-    // Función para mostrar los datos de afiliados en una tabla
-    function mostrarDatosEnTabla(afiliados) {
-        const dataDiv = document.getElementById('data');
-        dataDiv.innerHTML = '';
+  // Función para mostrar los datos de afiliados en una tabla
+  function mostrarDatosEnTabla(afiliados) {
+      const dataDiv = document.getElementById('data');
+      dataDiv.innerHTML = '';
 
-        const table = document.createElement('table');
-        const headerRow = table.insertRow();
-        Object.keys(afiliados[0]).forEach(key => {
-            const headerCell = document.createElement('th');
-            headerCell.textContent = key;
-            headerRow.appendChild(headerCell);
-        });
+      // Ordenar los afiliados por ID antes de mostrarlos en la tabla
+      afiliados.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
-        afiliados.forEach(afiliado => {
-            const row = table.insertRow();
-            Object.values(afiliado).forEach(value => {
-                const cell = row.insertCell();
-                cell.textContent = value;
-            });
-        });
+      const table = document.createElement('table');
+      const headerRow = table.insertRow();
+      Object.keys(afiliados[0]).forEach(key => {
+          const headerCell = document.createElement('th');
+          headerCell.textContent = key;
+          headerRow.appendChild(headerCell);
+      });
 
-        dataDiv.appendChild(table);
-    }
+      afiliados.forEach(afiliado => {
+          const row = table.insertRow();
+          Object.values(afiliado).forEach(value => {
+              const cell = row.insertCell();
+              cell.textContent = value;
+          });
+      });
+
+      dataDiv.appendChild(table);
+  }
+
 
     // Event listener para el botón "Ver todos"
     document.getElementById("verTodosButton").addEventListener('click', cargarDatos);
@@ -107,16 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error al cargar los datos:', error));
     }
 
-    // Función para filtrar y mostrar solo los datos de la colección "Afiliados" en tabla
-    function verAfiliados() {
-        fetch('/src/main/java/Persistence/datos.json')
-            .then(response => response.json())
-            .then(data => {
-                const afiliados = data.filter(item => item.hasOwnProperty('nombre') && item.hasOwnProperty('edad'));
-                mostrarDatosEnTabla(afiliados);
-            })
-            .catch(error => console.error('Error al cargar los datos:', error));
-    }
+// Función para filtrar y mostrar solo los datos de la colección "Afiliados" en tabla
+function verAfiliados() {
+    fetch('/src/main/java/Persistence/datos.json')
+        .then(response => response.json())
+        .then(data => {
+            const afiliados = data.filter(item => item.hasOwnProperty('nombre') && item.hasOwnProperty('edad'));
+            const afiliadosOrdenados = afiliados.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
+            mostrarDatosEnTabla(afiliadosOrdenados);
+        })
+        .catch(error => console.error('Error al cargar los datos:', error));
+}
+
+
+
 
     // Función para filtrar y mostrar solo los datos de la colección "Deportes" en tabla
     function verDeportes() {

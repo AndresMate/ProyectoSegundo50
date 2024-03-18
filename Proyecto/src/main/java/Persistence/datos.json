@@ -1,87 +1,311 @@
 [
-{"_id": 16, "nombre": "Partido de Fútbol de Exhibición", "fecha": "2024-11-20"},
-{"_id": 5, "nombre": "Partido de Baloncesto Universitario", "fecha": "2024-06-10"},
-{"_id": 2, "nombre": "Competencia de Natación", "fecha": "2024-04-15"},
-{"_id": 18, "nombre": "Torneo de Tenis Profesional", "fecha": "2024-12-18"},
-{"_id": 6, "nombre": "Campeonato de Fútbol Juvenil", "fecha": "2024-06-25"},
-{"_id": 13, "nombre": "Gran Slam de Tenis", "fecha": "2024-10-08"},
-{"_id": 14, "nombre": "Campeonato de Ajedrez Regional", "fecha": "2024-10-20"},
-{"_id": 8, "nombre": "Torneo de Tenis Amateur", "fecha": "2024-07-23"},
-{"_id": 1, "nombre": "Partido de Fútbol Amistoso", "fecha": "2024-04-01"},
-{"_id": 19, "nombre": "Partida de Ajedrez Rápido", "fecha": "2025-01-10"},
-{"_id": 7, "nombre": "Competencia de Natación Infantil", "fecha": "2024-07-08"},
-{"_id": 10, "nombre": "Liga de Baloncesto de Barrio", "fecha": "2024-08-20"},
-{"_id": 15, "nombre": "Torneo de Baloncesto Femenino", "fecha": "2024-11-05"},
-{"_id": 11, "nombre": "Torneo Internacional de Fútbol", "fecha": "2024-09-10"},
-{"_id": 4, "nombre": "Torneo de Ajedrez Local", "fecha": "2024-05-20"},
-{"_id": 9, "nombre": "Partido de Ajedrez Escolar", "fecha": "2024-08-05"},
-{"_id": 17, "nombre": "Competencia de Natación Master", "fecha": "2024-12-05"},
-{"_id": 20, "nombre": "Liga de Baloncesto Juvenil", "fecha": "2025-01-25"},
-{"_id": 3, "nombre": "Torneo de Tenis Nacional", "fecha": "2024-05-05"},
-{"_id": 12, "nombre": "Campeonato Mundial de Natación", "fecha": "2024-09-25"},
-{"_id": 1, "nombre": "Fútbol", "modalidad": "Equipo", "Inscritos": 1, "cupos": 22},
-{"_id": 2, "nombre": "Natacion", "modalidad": "Individual", "Inscritos": 0, "cupos": 22},
-{"_id": 3, "nombre": "Tenis", "modalidad": "Individual", "Inscritos": 0, "cupos": 12},
-{"_id": 4, "nombre": "Ajedrez", "modalidad": "Individual", "Inscritos": 0, "cupos": 6},
-{"_id": 5, "nombre": "Basketball", "modalidad": "Equipo", "Inscritos": 0, "cupos": 20},
-{"_id": 11, "idGanador": 1, "idEvento": 11, "posicion": 1},
-{"_id": 19, "idGanador": 10456984, "idEvento": 19, "posicion": 1},
-{"_id": 1, "idGanador": 1010123456, "idEvento": 1, "posicion": 1},
-{"_id": 2, "idGanador": 1088901234, "idEvento": 2, "posicion": 1},
-{"_id": 16, "idGanador": 1077890123, "idEvento": 16, "posicion": 1},
-{"_id": 5, "idGanador": 1133456789, "idEvento": 5, "posicion": 1},
-{"_id": 3, "idGanador": 1111234567, "idEvento": 3, "posicion": 1},
-{"_id": 4, "idGanador": 1055678901, "idEvento": 4, "posicion": 1},
-{"_id": 14, "idGanador": 1088901234, "idEvento": 14, "posicion": 1},
-{"_id": 8, "idGanador": 1077890123, "idEvento": 8, "posicion": 1},
-{"_id": 12, "idGanador": 1133456789, "idEvento": 12, "posicion": 1},
-{"_id": 13, "idGanador": 1014567890, "idEvento": 13, "posicion": 1},
-{"_id": 6, "idGanador": 1066789012, "idEvento": 6, "posicion": 1},
-{"_id": 7, "idGanador": 1122345678, "idEvento": 7, "posicion": 1},
-{"_id": 9, "idGanador": 1055678901, "idEvento": 9, "posicion": 1},
-{"_id": 17, "idGanador": 1010123456, "idEvento": 17, "posicion": 1},
-{"_id": 10, "idGanador": 1010123456, "idEvento": 10, "posicion": 1},
-{"_id": 15, "idGanador": 1055678901, "idEvento": 15, "posicion": 1},
-{"_id": 18, "idGanador": 1010123456, "idEvento": 18, "posicion": 1},
-{"_id": 20, "idGanador": 10456984, "idEvento": 20, "posicion": 1},
-{"_id": 6, "nombre": "Diego García", "identificacion": "1006789012", "edad": 29, "idDeporte": 3, "idResultados": []},
-{"_id": 11, "nombre": "Laura Martínez", "identificacion": "1011234567", "edad": 20, "idDeporte": 3, "idResultados": []},
-{"_id": 1, "nombre": "Ana López", "identificacion": "1001234567", "edad": 25, "idDeporte": 3, "idResultados": []},
-{"_id": 22, "nombre": "Santiago Martínez", "identificacion": "1077890123", "edad": 20, "idDeporte": 1, "idResultados": []},
-{"_id": 37, "nombre": "Karol Villareal", "identificacion": "1166789016", "edad": 22, "idDeporte": 5, "idResultados": []},
-{"_id": 12, "nombre": "David González", "identificacion": "1012345678", "edad": 32, "idDeporte": 5, "idResultados": []},
-{"_id": 4, "nombre": "Pedro González", "identificacion": "1004567890", "edad": 28, "idDeporte": 4, "idResultados": []},
-{"_id": 16, "nombre": "Paula Jiménez", "identificacion": "1015678901", "edad": 22, "idDeporte": 1, "idResultados": []},
-{"_id": 7, "nombre": "Valentina Jiménez", "identificacion": "1007890123", "edad": 24, "idDeporte": 5, "idResultados": []},
-{"_id": 8, "nombre": "Santiago Díaz", "identificacion": "1008901234", "edad": 27, "idDeporte": 2, "idResultados": []},
-{"_id": 10, "nombre": "Nicolás Pérez", "identificacion": "1010123456", "edad": 31, "idDeporte": 1, "idResultados": []},
-{"_id": 15, "nombre": "Diego Araque", "identificacion": "10456984", "edad": 32, "idDeporte": 2, "idResultados": []},
-{"_id": 14, "nombre": "Alejandro García", "identificacion": "1014567890", "edad": 33, "idDeporte": 4, "idResultados": []},
-{"_id": 20, "nombre": "Mateo Rodríguez", "identificacion": "1055678901", "edad": 23, "idDeporte": 1, "idResultados": []},
-{"_id": 30, "nombre": "Alejandro López", "identificacion": "1155678901", "edad": 23, "idDeporte": 1, "idResultados": []},
-{"_id": 32, "nombre": "Ronaldo Armas", "identificacion": "10578984", "edad": 25, "idDeporte": 2, "idResultados": []},
-{"_id": 33, "nombre": "Santiago Fonseca", "identificacion": "10458987", "edad": 22, "idDeporte": 3, "idResultados": []},
-{"_id": 17, "nombre": "Camila Pérez", "identificacion": "1022345678", "edad": 22, "idDeporte": 2, "idResultados": []},
-{"_id": 24, "nombre": "Andrés López", "identificacion": "1099012345", "edad": 22, "idDeporte": 3, "idResultados": []},
-{"_id": 39, "nombre": "Eladio Rojas", "identificacion": "1166789018", "edad": 30, "idDeporte": 5, "idResultados": []},
-{"_id": 9, "nombre": "Mariana López", "identificacion": "1009012345", "edad": 26, "idDeporte": 4, "idResultados": []},
-{"_id": 25, "nombre": "Daniela Pérez", "identificacion": "1100123456", "edad": 24, "idDeporte": 4, "idResultados": []},
-{"_id": 29, "nombre": "Isabella Herrera", "identificacion": "1144567890", "edad": 21, "idDeporte": 3, "idResultados": []},
-{"_id": 26, "nombre": "Nicolás García", "identificacion": "1111234567", "edad": 21, "idDeporte": 5, "idResultados": []},
-{"_id": 18, "nombre": "Juan García", "identificacion": "1033456789", "edad": 25, "idDeporte": 4, "idResultados": []},
-{"_id": 3, "nombre": "Camila Martínez", "identificacion": "1003456789", "edad": 22, "idDeporte": 2, "idResultados": []},
-{"_id": 19, "nombre": "Sofía López", "identificacion": "1044567890", "edad": 21, "idDeporte": 3, "idResultados": []},
-{"_id": 36, "nombre": "Hector Cifuentes", "identificacion": "1166789015", "edad": 35, "idDeporte": 4, "idResultados": []},
-{"_id": 21, "nombre": "Valentina Herrera", "identificacion": "1066789012", "edad": 24, "idDeporte": 5, "idResultados": []},
-{"_id": 2, "nombre": "Juan Pérez", "identificacion": "1002345678", "edad": 30, "idDeporte": 5, "idResultados": []},
-{"_id": 27, "nombre": "Laura Martínez", "identificacion": "1122345678", "edad": 20, "idDeporte": 2, "idResultados": []},
-{"_id": 28, "nombre": "Pedro Rodríguez", "identificacion": "1133456789", "edad": 25, "idDeporte": 4, "idResultados": []},
-{"_id": 35, "nombre": "Sandra Cardenas", "identificacion": "1166789014", "edad": 22, "idDeporte": 1, "idResultados": []},
-{"_id": 5, "nombre": "Sofía Rodríguez", "identificacion": "1005678901", "edad": 23, "idDeporte": 1, "idResultados": []},
-{"_id": 23, "nombre": "Mariana Gómez", "identificacion": "1088901234", "edad": 26, "idDeporte": 2, "idResultados": []},
-{"_id": 38, "nombre": "Andrea Salamanca", "identificacion": "1166789017", "edad": 26, "idDeporte": 2, "idResultados": []},
-{"_id": 34, "nombre": "Carmen Estepa", "identificacion": "1166789013", "edad": 21, "idDeporte": 2, "idResultados": []},
-{"_id": 40, "nombre": "Jose Miranda", "identificacion": "1166789019", "edad": 19, "idDeporte": 3, "idResultados": []},
-{"_id": 13, "nombre": "Isabella Rodríguez", "identificacion": "1013456789", "edad": 21, "idDeporte": 2, "idResultados": []},
-{"_id": 31, "nombre": "Valentina García", "identificacion": "1166789012", "edad": 24, "idDeporte": 5, "idResultados": []}
+  {
+    "_id": 1,
+    "nombre": "Ana López",
+    "identificacion": "1001234567",
+    "edad": 25,
+    "idDeporte": 3,
+    "idResultados": []
+  },
+  {
+    "_id": 1,
+    "nombre": "Partido de Fútbol Amistoso",
+    "fecha": "2024-04-01"
+  },
+  {
+    "_id": 2,
+    "nombre": "Competencia de Natación",
+    "fecha": "2024-04-15"
+  },
+  {
+    "_id": 2,
+    "nombre": "Natacion",
+    "modalidad": "Individual",
+    "Inscritos": 0,
+    "cupos": 22
+  },
+  {
+    "_id": 2,
+    "nombre": "Juan Pérez",
+    "identificacion": "1002345678",
+    "edad": 30,
+    "idDeporte": 5,
+    "idResultados": []
+  },
+  {
+    "_id": 3,
+    "nombre": "Camila Martínez",
+    "identificacion": "1003456789",
+    "edad": 22,
+    "idDeporte": 2,
+    "idResultados": []
+  },
+  {
+    "_id": 3,
+    "nombre": "Torneo de Tenis Nacional",
+    "fecha": "2024-05-05"
+  },
+  {
+    "_id": 3,
+    "nombre": "Tenis",
+    "modalidad": "Individual",
+    "Inscritos": 0,
+    "cupos": 12
+  },
+  {
+    "_id": 4,
+    "nombre": "Ajedrez",
+    "modalidad": "Individual",
+    "Inscritos": 0,
+    "cupos": 6
+  },
+  {
+    "_id": 4,
+    "nombre": "Pedro González",
+    "identificacion": "1004567890",
+    "edad": 28,
+    "idDeporte": 4,
+    "idResultados": []
+  },
+  {
+    "_id": 4,
+    "nombre": "Torneo de Ajedrez Local",
+    "fecha": "2024-05-20"
+  },
+  {
+    "_id": 5,
+    "nombre": "Partido de Baloncesto Universitario",
+    "fecha": "2024-06-10"
+  },
+  {
+    "_id": 5,
+    "nombre": "Basketball",
+    "modalidad": "Equipo",
+    "Inscritos": 0,
+    "cupos": 20
+  },
+  {
+    "_id": 5,
+    "nombre": "Sofía Rodríguez",
+    "identificacion": "1005678901",
+    "edad": 23,
+    "idDeporte": 1,
+    "idResultados": []
+  },
+  {
+    "_id": 6,
+    "nombre": "Campeonato de Fútbol Juvenil",
+    "fecha": "2024-06-25"
+  },
+  {
+    "_id": 6,
+    "nombre": "Diego García",
+    "identificacion": "1006789012",
+    "edad": 29,
+    "idDeporte": 3,
+    "idResultados": []
+  },
+  {
+    "_id": 6,
+    "nombre": "Diego Araque",
+    "identificacion": "10456984",
+    "edad": 32,
+    "idDeporte": 2,
+    "idResultados": []
+  },
+  {
+    "_id": 7,
+    "nombre": "Competencia de Natación Infantil",
+    "fecha": "2024-07-08"
+  },
+  {
+    "_id": 7,
+    "nombre": "Valentina Jiménez",
+    "identificacion": "1007890123",
+    "edad": 24,
+    "idDeporte": 5,
+    "idResultados": []
+  },
+  {
+    "_id": 7,
+    "nombre": "Santiago Díaz",
+    "identificacion": "1008901234",
+    "edad": 27,
+    "idDeporte": 2,
+    "idResultados": []
+  },
+  {
+    "_id": 8,
+    "nombre": "Torneo de Tenis Amateur",
+    "fecha": "2024-07-23"
+  },
+  {
+    "_id": 8,
+    "nombre": "Torneo de Tenis Profesional",
+    "fecha": "2024-12-18"
+  },
+  {
+    "_id": 8,
+    "nombre": "Santiago Martínez",
+    "identificacion": "1077890123",
+    "edad": 20,
+    "idDeporte": 1,
+    "idResultados": []
+  },
+  {
+    "_id": 9,
+    "nombre": "Partido de Ajedrez Escolar",
+    "fecha": "2024-08-05"
+  },
+  {
+    "_id": 9,
+    "nombre": "Mariana López",
+    "identificacion": "1009012345",
+    "edad": 26,
+    "idDeporte": 4,
+    "idResultados": []
+  },
+  {
+    "_id": 10,
+    "nombre": "Liga de Baloncesto de Barrio",
+    "fecha": "2024-08-20"
+  },
+  {
+    "_id": 10,
+    "nombre": "Nicolás Pérez",
+    "identificacion": "1010123456",
+    "edad": 31,
+    "idDeporte": 1,
+    "idResultados": []
+  },
+  {
+    "_id": 11,
+    "nombre": "Torneo Internacional de Fútbol",
+    "fecha": "2024-09-10"
+  },
+  {
+    "_id": 11,
+    "nombre": "Laura Martínez",
+    "identificacion": "1011234567",
+    "edad": 20,
+    "idDeporte": 3,
+    "idResultados": []
+  },
+  {
+    "_id": 12,
+    "nombre": "Campeonato Mundial de Natación",
+    "fecha": "2024-09-25"
+  },
+  {
+    "_id": 12,
+    "nombre": "David González",
+    "identificacion": "1012345678",
+    "edad": 32,
+    "idDeporte": 5,
+    "idResultados": []
+  },
+  {
+    "_id": 13,
+    "nombre": "Gran Slam de Tenis",
+    "fecha": "2024-10-08"
+  },
+  {
+    "_id": 13,
+    "nombre": "Isabella Rodríguez",
+    "identificacion": "1013456789",
+    "edad": 21,
+    "idDeporte": 2,
+    "idResultados": []
+  },
+  {
+    "_id": 14,
+    "nombre": "Campeonato de Ajedrez Regional",
+    "fecha": "2024-10-20"
+  },
+  {
+    "_id": 14,
+    "nombre": "Alejandro García",
+    "identificacion": "1014567890",
+    "edad": 33,
+    "idDeporte": 4,
+    "idResultados": []
+  },
+  {
+    "_id": 15,
+    "nombre": "Torneo de Baloncesto Femenino",
+    "fecha": "2024-11-05"
+  },
+  {
+    "_id": 15,
+    "nombre": "Mateo Rodríguez",
+    "identificacion": "1055678901",
+    "edad": 23,
+    "idDeporte": 1,
+    "idResultados": []
+  },
+  {
+    "_id": 16,
+    "nombre": "Partido de Fútbol de Exhibición",
+    "fecha": "2024-11-20"
+  },
+  {
+    "_id": 16,
+    "nombre": "Paula Jiménez",
+    "identificacion": "1015678901",
+    "edad": 22,
+    "idDeporte": 1,
+    "idResultados": []
+  },
+  {
+    "_id": 17,
+    "nombre": "Competencia de Natación Master",
+    "fecha": "2024-12-05"
+  },
+  {
+    "_id": 17,
+    "nombre": "Camila Pérez",
+    "identificacion": "1022345678",
+    "edad": 22,
+    "idDeporte": 2,
+    "idResultados": []
+  },
+  {
+    "_id": 18,
+    "nombre": "Torneo de Tenis Profesional",
+    "fecha": "2024-12-18"
+  },
+  {
+    "_id": 18,
+    "nombre": "Juan García",
+    "identificacion": "1033456789",
+    "edad": 25,
+    "idDeporte": 4,
+    "idResultados": []
+  },
+  {
+    "_id": 19,
+    "nombre": "Partida de Ajedrez Rápido",
+    "fecha": "2025-01-10"
+  },
+  {
+    "_id": 19,
+    "nombre": "Sofía López",
+    "identificacion": "1044567890",
+    "edad": 21,
+    "idDeporte": 3,
+    "idResultados": []
+  },
+  {
+    "_id": 20,
+    "nombre": "Liga de Baloncesto Juvenil",
+    "fecha": "2025-01-25"
+  },
+  {
+    "_id": 20,
+    "nombre": "Valentina García",
+    "identificacion": "1166789012",
+    "edad": 24,
+    "idDeporte": 5,
+    "idResultados": []
+  }
 ]

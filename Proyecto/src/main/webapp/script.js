@@ -51,33 +51,29 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarDatosEnTabla(afiliados);
     }
 
-  // Función para mostrar los datos de afiliados en una tabla
-  function mostrarDatosEnTabla(afiliados) {
-      const dataDiv = document.getElementById('data');
-      dataDiv.innerHTML = '';
+    // Función para mostrar los datos de afiliados en una tabla
+    function mostrarDatosEnTabla(datos) {
+        const dataDiv = document.getElementById('data');
+        dataDiv.innerHTML = '';
 
-      // Ordenar los afiliados por ID antes de mostrarlos en la tabla
-      afiliados.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+        const table = document.createElement('table');
+        const headerRow = table.insertRow();
+        Object.keys(datos[0]).forEach(key => {
+            const headerCell = document.createElement('th');
+            headerCell.textContent = key;
+            headerRow.appendChild(headerCell);
+        });
 
-      const table = document.createElement('table');
-      const headerRow = table.insertRow();
-      Object.keys(afiliados[0]).forEach(key => {
-          const headerCell = document.createElement('th');
-          headerCell.textContent = key;
-          headerRow.appendChild(headerCell);
-      });
+        datos.forEach(item => {
+            const row = table.insertRow();
+            Object.values(item).forEach(value => {
+                const cell = row.insertCell();
+                cell.textContent = value;
+            });
+        });
 
-      afiliados.forEach(afiliado => {
-          const row = table.insertRow();
-          Object.values(afiliado).forEach(value => {
-              const cell = row.insertCell();
-              cell.textContent = value;
-          });
-      });
-
-      dataDiv.appendChild(table);
-  }
-
+        dataDiv.appendChild(table);
+    }
 
     // Event listener para el botón "Ver todos"
     document.getElementById("verTodosButton").addEventListener('click', cargarDatos);
@@ -107,24 +103,24 @@ document.addEventListener('DOMContentLoaded', function () {
     function cargarDatos() {
         fetch('/src/main/java/Persistence/datos.json')
             .then(response => response.json())
-            .then(data => mostrarDatosEnTabla(data))
+            .then(data => {
+                const datosOrdenados = data.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
+                mostrarDatosEnTabla(datosOrdenados);
+            })
             .catch(error => console.error('Error al cargar los datos:', error));
     }
 
-// Función para filtrar y mostrar solo los datos de la colección "Afiliados" en tabla
-function verAfiliados() {
-    fetch('/src/main/java/Persistence/datos.json')
-        .then(response => response.json())
-        .then(data => {
-            const afiliados = data.filter(item => item.hasOwnProperty('nombre') && item.hasOwnProperty('edad'));
-            const afiliadosOrdenados = afiliados.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
-            mostrarDatosEnTabla(afiliadosOrdenados);
-        })
-        .catch(error => console.error('Error al cargar los datos:', error));
-}
-
-
-
+    // Función para filtrar y mostrar solo los datos de la colección "Afiliados" en tabla
+    function verAfiliados() {
+        fetch('/src/main/java/Persistence/datos.json')
+            .then(response => response.json())
+            .then(data => {
+                const afiliados = data.filter(item => item.hasOwnProperty('nombre') && item.hasOwnProperty('edad'));
+                const afiliadosOrdenados = afiliados.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
+                mostrarDatosEnTabla(afiliadosOrdenados);
+            })
+            .catch(error => console.error('Error al cargar los datos:', error));
+    }
 
     // Función para filtrar y mostrar solo los datos de la colección "Deportes" en tabla
     function verDeportes() {
@@ -132,7 +128,8 @@ function verAfiliados() {
             .then(response => response.json())
             .then(data => {
                 const deportes = data.filter(item => item.hasOwnProperty('modalidad') && item.hasOwnProperty('cupos'));
-                mostrarDatosEnTabla(deportes);
+                const deportesOrdenados = deportes.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
+                mostrarDatosEnTabla(deportesOrdenados);
             })
             .catch(error => console.error('Error al cargar los datos:', error));
     }
@@ -143,7 +140,8 @@ function verAfiliados() {
             .then(response => response.json())
             .then(data => {
                 const eventos = data.filter(item => item.hasOwnProperty('fecha') && item.hasOwnProperty('nombre'));
-                mostrarDatosEnTabla(eventos);
+                const eventosOrdenados = eventos.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
+                mostrarDatosEnTabla(eventosOrdenados);
             })
             .catch(error => console.error('Error al cargar los datos:', error));
     }
@@ -154,7 +152,8 @@ function verAfiliados() {
             .then(response => response.json())
             .then(data => {
                 const resultados = data.filter(item => item.hasOwnProperty('idEvento') && item.hasOwnProperty('idGanador') && item.hasOwnProperty('posicion'));
-                mostrarDatosEnTabla(resultados);
+                const resultadosOrdenados = resultados.sort((a, b) => parseInt(a.id) - parseInt(b.id)); // Ordenar por ID de menor a mayor
+                mostrarDatosEnTabla(resultadosOrdenados);
             })
             .catch(error => console.error('Error al cargar los datos:', error));
     }

@@ -72,3 +72,20 @@ th {
 #addAfiliadoForm button {
     width: 100%;
 }
+/* Estilos para los botones */
+button {
+    display: block; /* Mostrar los botones como bloques */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    margin-bottom: 10px; /* Agregar espacio entre los botones */
+    background-color: #415e80; /* Color de fondo predeterminado */
+    color: white; /* Color de texto predeterminado */
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Padding interno */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+/* Estilo para cambiar el color de fondo al pasar el cursor */
+button:hover {
+    background-color: #0056b3; /* Nuevo color de fondo al pasar el cursor */
+}

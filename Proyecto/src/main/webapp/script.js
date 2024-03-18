@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', function () {
     // Variables para almacenar los afiliados
     let afiliados = [];
@@ -96,9 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener para el botón "Guardar"
     document.getElementById("guardarAfiliadoButton").addEventListener("click", agregarAfiliado);
 
-    // Event listener para el botón "Ver Últimos Afiliados"
-    document.getElementById("verUltimosAfiliadosButton").addEventListener('click', verUltimosAfiliados);
-
     // Función para cargar y mostrar todos los datos del archivo JSON
     function cargarDatos() {
         fetch('/src/main/java/Persistence/datos.json')
@@ -163,6 +162,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const ultimosAfiliados = afiliados.slice(-5); // Obtener los últimos 5 afiliados
         mostrarDatosEnTabla(ultimosAfiliados);
     }
+
+    // Event listener para el botón "Ver Últimos Afiliados"
+    document.getElementById("verUltimosAfiliadosButton").addEventListener('click', verUltimosAfiliados);
+
+    // Event listener para el botón "Borrar Afiliado"
+    document.getElementById("borrarAfiliadoButton").addEventListener('click', () => {
+        const id = prompt("Ingrese el ID del afiliado que desea borrar:");
+        const index = afiliados.findIndex(afiliado => afiliado.id === id);
+        if (index !== -1) {
+            afiliados.splice(index, 1);
+            guardarAfiliados();
+            mostrarDatosEnTabla(afiliados);
+            alert("Afiliado borrado exitosamente.");
+        } else {
+            alert("No se encontró ningún afiliado con ese ID.");
+        }
+    });
 
     // Cargar los datos de afiliados al cargar la página
     cargarAfiliados();

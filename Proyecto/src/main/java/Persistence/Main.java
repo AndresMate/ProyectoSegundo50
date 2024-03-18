@@ -1,4 +1,3 @@
-
 package Persistence;
 
 import com.mongodb.client.MongoClient;
@@ -40,7 +39,7 @@ public class Main {
             try (FileWriter fileWriter = new FileWriter("datos.json")) {
                 fileWriter.write("[\n");
                 for (int i = 0; i < jsonData.size(); i++) {
-                    fileWriter.write(jsonData.get(i));
+                    fileWriter.write("    " + jsonData.get(i));
                     // Agregar una coma si no es el último objeto
                     if (i < jsonData.size() - 1) {
                         fileWriter.write(",\n");

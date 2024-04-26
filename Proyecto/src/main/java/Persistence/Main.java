@@ -53,6 +53,7 @@ public class Main {
             System.out.println("Archivo JSON generado con éxito.");
         } catch (Exception e) {
             System.err.println("Error al conectar con la base de datos MongoDB: " + e.getMessage());
+
         }
     }
 }
